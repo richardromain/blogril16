@@ -7,6 +7,7 @@
                 <div class="panel-heading">Mon article</div>
                 <div class="panel-body">
                     Titre : {{ $post->title }} <br>
+                    {{  }}
                     Contenu : {{ $post->content }} <br>
                     Auteur : {{ $post->user->name }} <br>
                     <img src="{{ asset('img/posts/'.$post->picture) }}" alt="{{ $post->picture }}"> <br>

@@ -36,12 +36,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::add(
-            $request->input('name'),
-            $request->input('email'),
-            $request->input('password')
-        );
-
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+        ]);
         return redirect(route('users.show', $user));
     }
 
